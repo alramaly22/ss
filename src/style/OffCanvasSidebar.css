@@ -1,0 +1,135 @@
+/* Basic styling for Offcanvas sidebar */
+@font-face {
+    font-family: "Kidzhood Arabic";
+    src: url("../assets/fonts/alfont_com_KidzhoodArabicDEMO-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "RTL Mocha Yemen Sadah";
+    src: url("../assets/fonts/RTL-MochaYemen-Sadah.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+.off-canvas-links a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-family: "Kidzhood Arabic", sans-serif; /* Match the font family from navbar */
+    color: #2b2b2b; /* Match the text color */
+    text-decoration: none;
+    border-bottom: 1px solid #ddd; /* Light border for a subtle effect */
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  .off-canvas-links a:hover {
+    background-color: #205e75; /* Same hover color as navbar */
+    color: white; /* Change text to white on hover */
+    padding-left: 30px; /* Add a subtle shift for a smooth effect */
+  }
+  
+  /* Offcanvas header */
+  .offcanvas-header {
+    background-color: #fca43c; /* Match the navbar background */
+    color: white; /* White text */
+    font-family: "Kidzhood Arabic", sans-serif; /* Use the same font */
+    padding: 15px 20px;
+    border-bottom: 2px solid #fff; /* Subtle border separating header from body */
+  }
+  
+  .offcanvas-header h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Offcanvas body */
+  .offcanvas-body {
+    background-color: #fff; /* Light background for content */
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Navbar Toggle Button */
+  .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #205e75; /* Dark blue color for the toggler */
+  }
+  
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #205e75; /* Dark blue for the icon */
+    display: block;
+    margin: 5px 0;
+  }
+  
+  /* Mobile-specific Offcanvas styling */
+  @media (max-width: 768px) {
+    .offcanvas {
+      width: 250px; /* Adjust off-canvas width */
+      background-color: #fff; /* Light background */
+    }
+  
+    .offcanvas-body {
+      padding: 15px; /* Slightly less padding on mobile */
+    }
+  
+    .off-canvas-links a {
+      padding: 12px 20px; /* Adjust link padding for mobile */
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    /* Ensure the links are hidden by default and only show when active */
+    .offcanvas {
+      transition: transform 0.3s ease-in-out; /* Smooth slide in/out */
+      transform: translateX(100%); /* Start off-screen */
+    }
+  
+    .offcanvas.show {
+      transform: translateX(0); /* Slide into view */
+    }
+  }
+  /* Styling for the username at the top */
+.offcanvas-username {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #205e75; /* Dark blue color */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #fca43c;
+    font-family: "Kidzhood Arabic", sans-serif;
+  }
+  
+  /* Styling for the logout button */
+  .offcanvas-logout {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logout-btn {
+    background-color: #ff7f01; /* Same as the navbar color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "Kidzhood Arabic", sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #205e75;
+  }
+  

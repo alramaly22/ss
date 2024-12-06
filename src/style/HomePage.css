@@ -1,0 +1,178 @@
+/* General Reset */
+:root {
+  --teal-green: #205e75;
+  --bright-orange: #fca43c;
+  --warm-beige: #fffaf0;
+  --charcoal-grey: #2b2b2b;
+  --soft-yellow: #ffe38e;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --focus-color: rgba(28, 138, 138, 0.4);
+}
+/* Define Kidzhood Arabic font */
+@font-face {
+  font-family: "Kidzhood Arabic";
+  src: url("../assets/fonts/alfont_com_KidzhoodArabicDEMO-Light.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RTL Mocha Yemen Sadah";
+  src: url("../assets/fonts/RTL-MochaYemen-Sadah.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: "Kidzhood Arabic", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+  }
+  
+  /* Hero Section */
+  .bg-light {
+    background-color: #e5f3f8 !important;
+  }
+  .hero-section {
+    position: relative; /* To contain the overlay */
+    background: url('../assets/hero.jpg') no-repeat center center/cover;
+    color: white; /* Adjust text color for contrast */
+    text-align: center;
+    padding: 5rem 0;
+    overflow: hidden; /* Ensure no overflow due to positioning */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Places it below content but above the background */
+  }
+  
+  .hero-section > * {
+    position: relative; /* To layer content above the overlay */
+    z-index: 2;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    color:#fff;
+    font-family: RTL Mocha Yemen Sadah;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+    color: #bebebe;
+  }
+  
+  .hero-section button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem; 
+    border-radius: 25px; 
+    font-weight: bold;
+    cursor: pointer; 
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+  }
+  
+  button.more-info-btn,
+  button.cta-btn {
+    background: #ff7f01 !important;
+    border: 2px solid #ff7f01 !important; 
+    color: #ffffff !important;
+  }
+  
+  /* Common sliding effect for both buttons */
+  .hero-section button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #205e75; /* New hover background color */
+    z-index: 0;
+    border: 2px solid #205e75 !important; /* Consistent border color */
+
+    transition: left 0.4s ease-in-out; /* Smooth slide-in animation */
+  }
+  
+  .hero-section button:hover::before {
+    left: 0;
+  }
+  
+  .hero-section button:hover {
+    color: #fff !important; /* Ensure text color is visible when background slides in */
+    border-color: #205e75 !important; /* Ensure border matches hover effect */
+  }
+  
+  /* Ensure text stays above the sliding effect */
+  .hero-section button span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  /* Features Section */
+  .features-section {
+    background: url('src\assets\—Pngtree—flowers love heart doodle seamless_1897258.jpg') no-repeat center center/cover;
+    padding: 3rem 0;
+
+  }
+  
+  .features-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .feature-card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    color: #205e75; /* Icon color */
+  }
+  
+  .feature-icon img {
+    border-radius: 50%;
+    max-width: 100px;
+    object-fit: cover;
+  }
+  
+  .feature-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .feature-card .card-text {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-icon img {
+      width: 80px; /* Responsive image size */
+    }
+  }
